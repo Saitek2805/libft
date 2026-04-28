@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 12:32:59 by khurtado          #+#    #+#             */
-/*   Updated: 2026/04/28 09:56:48 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/04/28 10:37:01 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -43,5 +43,6 @@ int		ft_strncmp(const char *str1, const char *str2, size_t size);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif
