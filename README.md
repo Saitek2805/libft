@@ -1,1 +1,14 @@
-𝐸𝓈𝓉𝑒 𝓅𝓇𝑜𝓎𝑒𝒸𝓉𝑜 𝒽𝒶 𝓈𝒾𝒹𝑜 𝒸𝓇𝑒𝒶𝒹𝑜 𝒸𝑜𝓂𝑜 𝓅𝒶𝓇𝓉𝑒 𝒹𝑒𝓁 𝒸𝓊𝓇𝓇í𝒸𝓊𝓁𝑜 𝒹𝑒 𝟦𝟤 𝓅𝑜𝓇 𝓀𝒽𝓊𝓇𝓉𝒶𝒹𝑜
+*Este proyecto ha sido creado como parte del currículo de 42 por khurtado* 
+#Descripción
+que presente claramente el proyecto, incluyendo su
+objetivo y una breve visión genera
+
+#Instrucciones
+que contenga cualquier información relevante sobre
+compilación, instalación y/o ejecución
+#Recursos
+que enumere referencias clásicas relacionadas con el
+tema (documentación, artículos, tutoriales, etc.), así como una descripción del uso
+de IA, especificando para qué tareas y en qué partes del proyecto se ha utilizado
+ambién debe incluirse una descripción detallada de la librería creada para este
+proyecto
