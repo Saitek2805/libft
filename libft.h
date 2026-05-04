@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 12:32:59 by khurtado          #+#    #+#             */
-/*   Updated: 2026/04/28 10:37:01 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/05/04 11:27:37 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -19,6 +19,7 @@ int		ft_isalnum(int character);
 int		ft_isascii(int character);
 int		ft_isdigit(int character);
 int		ft_isprint(int character);
+int		ft_atoi(const char *str);
 
 int		ft_tolower(int letter);
 int		ft_toupper(int letter);
