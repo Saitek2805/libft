@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khurtado <khurtado@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 13:33:42 by khurtado          #+#    #+#             */
-/*   Updated: 2026/05/05 10:25:23 by khurtado         ###   ########.fr       */
+/*   Created: 2026/05/05 09:45:43 by khurtado          #+#    #+#             */
+/*   Updated: 2026/05/05 10:30:54 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(char const *s, char c)
+int	ft_atoi(const char *str)
 {
-	int counter = 0;
-	int words = 0;
+	int	cntr;
+	int	sign;
+	int	result;
 
-	while (s[counter])
+	cntr = 0;
+	sign = 1;
+	result = 0;
+	while (str[cntr] == ' ' || (str[cntr] >= 9 && str[cntr] <= 13))
+		cntr++;
+	if (str[cntr] == '-' || str[cntr] == '+')
 	{
-		while (s[counter] == c)
-			counter++;
-		if (s[counter])
-			words++;
-		while (s[counter] && s[counter] != c)
-			counter++;
+		if (str[cntr] == '-')
+			sign = -1;
+		cntr++;
 	}
-	return (words);
-}
-
-static int malloc_all()
-
-char **ft_split(char const *s, char c)
-{
-	int	words;
-	
+	while (str[cntr] >= '0' && str[cntr] <= '9')
+	{
+		result = result * 10 + (str[cntr] - '0');
+		cntr++;
+	}
+	return (result * sign);
 }

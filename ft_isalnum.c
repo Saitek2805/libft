@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.      +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 12:27:51 by khurtado          #+#    #+#             */
-/*   Updated: 2026/04/27 12:27:56 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/05/05 09:57:25 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
