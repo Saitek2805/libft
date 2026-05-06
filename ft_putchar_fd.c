@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khurtado <khurtado@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/05 12:11:49 by khurtado          #+#    #+#             */
-/*   Updated: 2026/05/06 11:31:22 by khurtado         ###   ########.fr       */
+/*   Created: 2026/05/06 11:45:28 by khurtado          #+#    #+#             */
+/*   Updated: 2026/05/06 11:51:16 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void ft_putchar_fd(char c, int fd)
 {
-	char	*strres;
-	size_t		counter;
-
-	strres = (char *) malloc (ft_strlen(s) + 1);
-	if (!strres)
-		return (NULL);
-	counter = 0;
-	while (counter < ft_strlen(s))
-	{
-		strres[counter] = (*f)(counter,strres[counter]);
-		counter++;
-	}
-	return (strres);
+	write(fd, &c, 1);
 }
