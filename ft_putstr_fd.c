@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: khurtado <khurtado@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/06 11:48:37 by khurtado          #+#    #+#             */
-/*   Updated: 2026/05/06 11:57:36 by khurtado         ###   ########.fr       */
+/*   Created: 2026/05/06 22:37:48 by khurtado          #+#    #+#             */
+/*   Updated: 2026/05/06 22:37:52 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	ft_putstr_fd(char *s, int fd)
 
 	counter = 0;
 	if (!s)
-		return;
-	while(s[counter] != '\0')
+		return ;
+	while (s[counter] != '\0')
 	{
 		write(fd, &s[counter], 1);
 		counter++;

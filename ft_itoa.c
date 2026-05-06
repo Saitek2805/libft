@@ -14,20 +14,17 @@
 
 static int	ft_count_char(int n)
 {
-	int	counter;
-	int	nbrcp;
+	int		counter;
+	long	nb;
 
-	nbrcp = n;
+	nb = n;
 	counter = 0;
-	if (n < 0)
-	{
+	if (nb <= 0)
 		counter++;
-		nbrcp *= -1;
-	}
-	while (nbrcp > 0)
+	while (nb != 0)
 	{
+		nb /= 10;
 		counter++;
-		nbrcp = nbrcp / 10;
 	}
 	return (counter);
 }
@@ -36,25 +33,24 @@ char	*ft_itoa(int n)
 {
 	int		counter;
 	char	*str;
-	int		sign;
+	long	nb;
 
-	sign = 0;
+	nb = n;
 	counter = ft_count_char(n);
-	if (n < 0)
-	{
-		sign = 1;
-		n *= -1;
-	}
-	str = (char *) malloc(counter * sizeof(char) + 1);
+	str = (char *)malloc(sizeof(char) * (counter + 1));
 	if (!str)
 		return (NULL);
 	str[counter] = '\0';
-	while (counter-- > 0)
+	if (nb < 0)
+		nb = -nb;
+	if (nb == 0)
+		str[0] = '0';
+	while (nb > 0)
 	{
-		str[counter] = n % 10 + 48;
-		n = n / 10;
+		str[--counter] = (nb % 10) + '0';
+		nb /= 10;
 	}
-	if (sign)
+	if (n < 0)
 		str[0] = '-';
 	return (str);
 }

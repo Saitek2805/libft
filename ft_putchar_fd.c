@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: khurtado <khurtado@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/06 11:45:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/05/06 11:51:16 by khurtado         ###   ########.fr       */
+/*   Created: 2026/05/06 22:37:20 by khurtado          #+#    #+#             */
+/*   Updated: 2026/05/06 22:39:52 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	write (fd, &c, 1);
 }
