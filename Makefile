@@ -6,7 +6,7 @@
 #    By: khurtado <khurtado@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/24 12:49:14 by khurtado          #+#    #+#              #
-#    Updated: 2026/05/06 12:33:11 by khurtado         ###   ########.fr        #
+#    Updated: 2026/05/06 15:11:16 by khurtado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS = ft_bzero.c ft_isdigit.c ft_memmove.c ft_strlcpy.c ft_tolower.c \
 	ft_memcmp.c ft_strdup.c ft_strnstr.c ft_isascii.c ft_memcpy.c \
 	ft_strjoin.c ft_substr.c ft_atoi.c ft_strlcat.c ft_strtrim.c ft_itoa.c \
 	ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-	ft_putnbr_fd.c
+	ft_putnbr_fd.c ft_lstnew.c ft_lstadd_front
 
 OBJS = $(SRCS:.c=.o)
 
@@ -40,5 +40,7 @@ fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
+
+bonus : $(BONUS)
 
 .PHONY : all clean fclean re
