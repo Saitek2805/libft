@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 13:33:42 by khurtado          #+#    #+#             */
-/*   Updated: 2026/05/07 11:59:07 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/05/07 14:44:25 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,55 +21,55 @@ static void	ft_free_split(char **str, int size)
 
 static int	ft_count_words(const char *str, char c)
 {
-	int	i;
+	int	cntr;
 	int	words;
 
-	i = 0;
+	cntr = 0;
 	words = 0;
-	while (str[i])
+	while (str[cntr])
 	{
-		if (str[i] != c && (str[i + 1] == c || str[i + 1] == '\0'))
+		if (str[cntr] != c && (str[cntr + 1] == c || str[cntr + 1] == '\0'))
 			words++;
-		i++;
+		cntr++;
 	}
 	return (words);
 }
 
-static void	write_word(char *dest, const char *from, char c)
+static void	ft_fill_word(char *dest, const char *from, char c)
 {
-	int	i;
+	int	cntr;
 
-	i = 0;
-	while (from[i] && from[i] != c)
+	cntr = 0;
+	while (from[cntr] && from[cntr] != c)
 	{
-		dest[i] = from[i];
-		i++;
+		dest[cntr] = from[cntr];
+		cntr++;
 	}
-	dest[i] = '\0';
+	dest[cntr] = '\0';
 }
 
-static int	write_split(char **split, const char *str, char c)
+static int	ft_fill_all(char **str2, const char *str, char c)
 {
-	int	i;
-	int	j;
+	int	cntr1;
+	int	cntr2;
 	int	word;
 
-	i = 0;
+	cntr1 = 0;
 	word = 0;
-	while (str[i])
+	while (str[cntr1])
 	{
-		if (str[i] == c)
-			i++;
+		if (str[cntr1] == c)
+			cntr1++;
 		else
 		{
-			j = 0;
-			while (str[i + j] && str[i + j] != c)
-				j++;
-			split[word] = malloc(sizeof(char) * (j + 1));
-			if (!split[word])
-				return (ft_free_split(split, word), -1);
-			write_word(split[word], str + i, c);
-			i += j;
+			cntr2 = 0;
+			while (str[cntr1 + cntr2] && str[cntr1 + cntr2] != c)
+				cntr2++;
+			str2[word] = malloc(sizeof(char) * (cntr2 + 1));
+			if (!str2[word])
+				return (ft_free_split(str2, word), -1);
+			ft_fill_word(str2[word], str + cntr1, c);
+			cntr1 += cntr2;
 			word++;
 		}
 	}
@@ -88,7 +88,7 @@ char	**ft_split(const char *str, char c)
 	if (!res)
 		return (NULL);
 	res[words] = NULL;
-	if (write_split(res, str, c) == -1)
+	if (ft_fill_all(res, str, c) == -1)
 		return (NULL);
 	return (res);
 }
