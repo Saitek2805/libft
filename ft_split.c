@@ -6,20 +6,20 @@
 /*   By: khurtado <khurtado@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 13:33:42 by khurtado          #+#    #+#             */
-/*   Updated: 2026/05/06 22:55:22 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/05/07 11:59:07 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	free_split(char **str, int size)
+static void	ft_free_split(char **str, int size)
 {
 	while (size >= 0)
 		free(str[size--]);
 	free(str);
 }
 
-static int	count_words(const char *str, char c)
+static int	ft_count_words(const char *str, char c)
 {
 	int	i;
 	int	words;
@@ -67,7 +67,7 @@ static int	write_split(char **split, const char *str, char c)
 				j++;
 			split[word] = malloc(sizeof(char) * (j + 1));
 			if (!split[word])
-				return (free_split(split, word), -1);
+				return (ft_free_split(split, word), -1);
 			write_word(split[word], str + i, c);
 			i += j;
 			word++;
@@ -83,7 +83,7 @@ char	**ft_split(const char *str, char c)
 
 	if (!str)
 		return (NULL);
-	words = count_words(str, c);
+	words = ft_count_words(str, c);
 	res = malloc(sizeof(char *) * (words + 1));
 	if (!res)
 		return (NULL);

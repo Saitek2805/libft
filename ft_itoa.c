@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 10:27:53 by khurtado          #+#    #+#             */
-/*   Updated: 2026/05/05 11:28:12 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/05/07 11:57:54 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_count_char(int n)
 		counter++;
 	while (nb != 0)
 	{
-		nb /= 10;
+		nb = nb / 10;
 		counter++;
 	}
 	return (counter);
@@ -37,7 +37,7 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	counter = ft_count_char(n);
-	str = (char *)malloc(sizeof(char) * (counter + 1));
+	str = (char *)malloc(counter + 1);
 	if (!str)
 		return (NULL);
 	str[counter] = '\0';
@@ -47,8 +47,8 @@ char	*ft_itoa(int n)
 		str[0] = '0';
 	while (nb > 0)
 	{
-		str[--counter] = (nb % 10) + '0';
-		nb /= 10;
+		str[--counter] = (nb % 10) + 48;
+		nb = nb / 10;
 	}
 	if (n < 0)
 		str[0] = '-';
